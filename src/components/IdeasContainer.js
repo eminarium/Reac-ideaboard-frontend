@@ -1,6 +1,15 @@
 import React, {Component} from 'react'
 
+
 class IdeasContainer extends Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            ideas: []
+        }
+    }
+
     render() {
         return (
             <div>
