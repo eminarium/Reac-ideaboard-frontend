@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import axios from 'axios'
 
 
 class IdeasContainer extends Component {
@@ -8,6 +9,15 @@ class IdeasContainer extends Component {
         this.state = {
             ideas: []
         }
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:3000/api/v1/ideas')
+        .then(response => {
+            console.log(response);
+            this.setState({ideas: response.data});
+        })
+        .catch(error => console.log(error));
     }
 
     render() {
